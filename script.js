@@ -16,9 +16,9 @@ function setGradient(clr1,clr2) { //Changed setGradient function to take argumen
 }
 
 //The following functions ultimately create the setRandomColors, which provides random values for the setGradient function
-randomTo255 = () => Math.floor(Math.random()*256); //creates random number between 0 and 255
+const randomTo255 = () => Math.floor(Math.random()*256); //creates random number between 0 and 255
 
-createRBGArray = () => { //creates an array of 3 random RGB values
+const createRBGArray = () => { //creates an array of 3 random RGB values
 	let RBGArray = [];
 	for (i = 0; i < 3; i++){
 		RBGArray.push(randomTo255());
@@ -26,12 +26,12 @@ createRBGArray = () => { //creates an array of 3 random RGB values
 	return RBGArray;
 }
 
-convertRGBArrayToString = (array) => { //takes array of 3 RGB values and formats into proper format for RGB color
+const convertRGBArrayToString = (array) => { //takes array of 3 RGB values and formats into proper format for RGB color
 	let convertedArray = array.join(", ");
 	return ("rgb(" + convertedArray + ")");
 }
 
-setRandomColors = () => { //Set color1 and color2 values to random RGB values
+const setRandomColors = () => { //Set color1 and color2 values to random RGB values
 	let clr1 = convertRGBArrayToString(createRBGArray());
 	let clr2 = convertRGBArrayToString(createRBGArray());
 	setGradient(clr1,clr2);
